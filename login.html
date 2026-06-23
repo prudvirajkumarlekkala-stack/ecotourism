@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Stackly Eco Tourism</title>
+  <style>
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body { 
+      font-family: Georgia, serif; 
+      color: #2c3e2d; 
+      background: linear-gradient(135deg, #1c3a2a 0%, #2c4a30 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 420px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      padding: 3rem 2.5rem;
+    }
+
+    .logo-wrap {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .logo-wrap h1 {
+      font-size: 1.8rem;
+      color: #2c4a30;
+      margin-bottom: 0.3rem;
+    }
+
+    .logo-wrap p {
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      color: #7a9c7a;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      color: #2c4a30;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .form-intro {
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      color: #6a8c6a;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    form {
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-family: Arial, sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #2c4a30;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.02em;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1.5px solid #e8f0e6;
+      border-radius: 6px;
+      background: #f9f6f0;
+      color: #2c4a30;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+      outline: none;
+      border-color: #5a9e60;
+      box-shadow: 0 0 0 3px rgba(90, 158, 96, 0.1);
+    }
+
+    input::placeholder {
+      color: rgba(90, 158, 96, 0.4);
+    }
+
+    .remember-forgot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      font-size: 0.85rem;
+    }
+
+    .remember-forgot label {
+      margin-bottom: 0;
+      font-weight: 400;
+    }
+
+    .remember-forgot a {
+      color: #5a9e60;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .remember-forgot a:hover {
+      color: #3d7a43;
+    }
+
+    input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      margin-right: 0.4rem;
+      cursor: pointer;
+    }
+
+    .btn-login {
+      background: #5a9e60;
+      color: #fff;
+      border: none;
+      padding: 0.95rem;
+      font-family: Arial, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+      letter-spacing: 0.03em;
+      margin-top: 0.5rem;
+    }
+
+    .btn-login:hover {
+      background: #3d7a43;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(90, 158, 96, 0.3);
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e8f0e6;
+    }
+
+    .divider span {
+      font-family: Arial, sans-serif;
+      font-size: 0.8rem;
+      color: #a8d5a2;
+    }
+
+    .social-login {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .btn-social {
+      background: #f9f6f0;
+      border: 1.5px solid #e8f0e6;
+      padding: 0.75rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      color: #2c4a30;
+      transition: all 0.2s;
+    }
+
+    .btn-social:hover {
+      border-color: #5a9e60;
+      background: #eef5ec;
+    }
+
+    .signup-link {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      color: #6a8c6a;
+    }
+
+    .signup-link a {
+      color: #5a9e60;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .signup-link a:hover {
+      color: #3d7a43;
+    }
+
+    .back-home {
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+
+    .back-home a {
+      display: inline-block;
+      color: #5a9e60;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .back-home a:hover {
+      color: #3d7a43;
+    }
+
+    @media(max-width: 480px) {
+      .container {
+        padding: 2rem 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="logo-wrap">
+    <h1>🌿 Stackly</h1>
+    <p>Eco Tourism</p>
+  </div>
+
+  <h2>Welcome Back</h2>
+  <p class="form-intro">Sign in to your account to continue your eco-adventure journey.</p>
+
+  <form onsubmit="handleLogin(event)">
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" placeholder="your@email.com" required/>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="••••••••" required/>
+    </div>
+
+    <div class="remember-forgot">
+      <label style="display: flex; align-items: center;">
+        <input type="checkbox" name="remember"/>
+        Remember me
+      </label>
+      <a href="#forgot">Forgot Password?</a>
+    </div>
+
+    <button type="submit" class="btn-login">Login →</button>
+  </form>
+
+  <div class="divider">
+    <span>OR</span>
+  </div>
+
+  <div class="social-login">
+    <button class="btn-social" onclick="handleSocialLogin('google')">Google Sign In</button>
+    <button class="btn-social" onclick="handleSocialLogin('github')">Continue with GitHub</button>
+  </div>
+
+  <div class="signup-link">
+    Don't have an account? <a href="signup.html">Create one</a>
+  </div>
+
+  <div class="back-home">
+    <a href="index.html">← Back to Home</a>
+  </div>
+</div>
+
+<script>
+  function handleLogin(e) {
+    e.preventDefault();
+    const email = document.getElementById('email').value;
+    alert(`Welcome back, ${email}! 🌿\n\nLogin functionality will be fully integrated with a backend.`);
+    e.target.reset();
+  }
+
+  function handleSocialLogin(provider) {
+    alert(`${provider.toUpperCase()} sign-in will be configured in the backend.`);
+  }
+</script>
+
+</body>
+</html>
