@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up - Stackly Eco Tourism</title>
+  <style>
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body { 
+      font-family: Georgia, serif; 
+      color: #2c3e2d; 
+      background: linear-gradient(135deg, #1c3a2a 0%, #2c4a30 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 480px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      padding: 3rem 2.5rem;
+    }
+
+    .logo-wrap {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .logo-wrap h1 {
+      font-size: 1.8rem;
+      color: #2c4a30;
+      margin-bottom: 0.3rem;
+    }
+
+    .logo-wrap p {
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      color: #7a9c7a;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      color: #2c4a30;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .form-intro {
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      color: #6a8c6a;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    form {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-family: Arial, sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #2c4a30;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.02em;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    select {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1.5px solid #e8f0e6;
+      border-radius: 6px;
+      background: #f9f6f0;
+      color: #2c4a30;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus,
+    input[type="tel"]:focus,
+    select:focus {
+      outline: none;
+      border-color: #5a9e60;
+      box-shadow: 0 0 0 3px rgba(90, 158, 96, 0.1);
+    }
+
+    input::placeholder {
+      color: rgba(90, 158, 96, 0.4);
+    }
+
+    .full-width {
+      grid-column: 1 / -1;
+    }
+
+    .password-strength {
+      font-family: Arial, sans-serif;
+      font-size: 0.75rem;
+      color: #7a9c7a;
+      margin-top: 0.3rem;
+    }
+
+    .strength-bar {
+      width: 100%;
+      height: 4px;
+      background: #e8f0e6;
+      border-radius: 2px;
+      overflow: hidden;
+      margin-top: 0.3rem;
+    }
+
+    .strength-indicator {
+      height: 100%;
+      width: 0%;
+      background: #ff6b6b;
+      transition: width 0.3s, background 0.3s;
+    }
+
+    .strength-indicator.medium {
+      width: 60%;
+      background: #ffa940;
+    }
+
+    .strength-indicator.strong {
+      width: 100%;
+      background: #5a9e60;
+    }
+
+    .terms {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-family: Arial, sans-serif;
+      font-size: 0.85rem;
+      color: #6a8c6a;
+      margin: 0.5rem 0;
+    }
+
+    .terms input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      margin-top: 2px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .terms a {
+      color: #5a9e60;
+      text-decoration: none;
+    }
+
+    .terms a:hover {
+      text-decoration: underline;
+    }
+
+    .btn-signup {
+      background: #5a9e60;
+      color: #fff;
+      border: none;
+      padding: 0.95rem;
+      font-family: Arial, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+      letter-spacing: 0.03em;
+      margin-top: 1rem;
+    }
+
+    .btn-signup:hover {
+      background: #3d7a43;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(90, 158, 96, 0.3);
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e8f0e6;
+    }
+
+    .divider span {
+      font-family: Arial, sans-serif;
+      font-size: 0.8rem;
+      color: #a8d5a2;
+    }
+
+    .social-signup {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .btn-social {
+      background: #f9f6f0;
+      border: 1.5px solid #e8f0e6;
+      padding: 0.75rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      color: #2c4a30;
+      transition: all 0.2s;
+    }
+
+    .btn-social:hover {
+      border-color: #5a9e60;
+      background: #eef5ec;
+    }
+
+    .login-link {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      color: #6a8c6a;
+    }
+
+    .login-link a {
+      color: #5a9e60;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .login-link a:hover {
+      color: #3d7a43;
+    }
+
+    .back-home {
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+
+    .back-home a {
+      display: inline-block;
+      color: #5a9e60;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .back-home a:hover {
+      color: #3d7a43;
+    }
+
+    @media(max-width: 480px) {
+      .container {
+        padding: 2rem 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="logo-wrap">
+    <h1>🌿 Stackly</h1>
+    <p>Eco Tourism</p>
+  </div>
+
+  <h2>Join Our Community</h2>
+  <p class="form-intro">Create an account to start booking your eco-adventure today.</p>
+
+  <form onsubmit="handleSignup(event)">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" placeholder="John" required/>
+      </div>
+      <div class="form-group">
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" placeholder="Doe" required/>
+      </div>
+    </div>
+
+    <div class="form-group full-width">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" placeholder="your@email.com" required/>
+    </div>
+
+    <div class="form-group full-width">
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" placeholder="+91 90000 00000"/>
+    </div>
+
+    <div class="form-group full-width">
+      <label for="country">Country</label>
+      <select id="country" required>
+        <option value="">Select your country</option>
+        <option>India</option>
+        <option>United States</option>
+        <option>United Kingdom</option>
+        <option>Canada</option>
+        <option>Australia</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <div class="form-group full-width">
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="••••••••" onchange="checkStrength()" required/>
+      <div class="strength-bar">
+        <div class="strength-indicator" id="strengthIndicator"></div>
+      </div>
+      <p class="password-strength">Use at least 8 characters with uppercase, lowercase, and numbers</p>
+    </div>
+
+    <div class="form-group full-width">
+      <label for="confirm">Confirm Password</label>
+      <input type="password" id="confirm" placeholder="••••••••" required/>
+    </div>
+
+    <div class="terms">
+      <input type="checkbox" id="terms" required/>
+      <label for="terms">I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></label>
+    </div>
+
+    <div class="terms">
+      <input type="checkbox" id="newsletter"/>
+      <label for="newsletter">I'd like to receive updates about eco-tourism tips and offers</label>
+    </div>
+
+    <button type="submit" class="btn-signup">Create Account →</button>
+  </form>
+
+  <div class="divider">
+    <span>OR</span>
+  </div>
+
+  <div class="social-signup">
+    <button type="button" class="btn-social" onclick="handleSocialSignup('google')">Sign Up with Google</button>
+    <button type="button" class="btn-social" onclick="handleSocialSignup('github')">Sign Up with GitHub</button>
+  </div>
+
+  <div class="login-link">
+    Already have an account? <a href="login.html">Log in here</a>
+  </div>
+
+  <div class="back-home">
+    <a href="index.html">← Back to Home</a>
+  </div>
+</div>
+
+<script>
+  function checkStrength() {
+    const password = document.getElementById('password').value;
+    const indicator = document.getElementById('strengthIndicator');
+    
+    let strength = 0;
+    if (password.length >= 8) strength += 1;
+    if (/[A-Z]/.test(password)) strength += 1;
+    if (/[0-9]/.test(password)) strength += 1;
+    
+    indicator.classList.remove('medium', 'strong');
+    if (strength === 2) {
+      indicator.classList.add('medium');
+    } else if (strength === 3) {
+      indicator.classList.add('strong');
+    }
+  }
+
+  function handleSignup(e) {
+    e.preventDefault();
+    
+    const password = document.getElementById('password').value;
+    const confirm = document.getElementById('confirm').value;
+    
+    if (password !== confirm) {
+      alert('Passwords do not match!');
+      return;
+    }
+    
+    const fname = document.getElementById('fname').value;
+    alert(`Welcome to Stackly, ${fname}! 🌿\n\nYour account has been created successfully!`);
+    e.target.reset();
+  }
+
+  function handleSocialSignup(provider) {
+    alert(`${provider.toUpperCase()} sign-up will be configured in the backend.`);
+  }
+</script>
+
+</body>
+</html>
