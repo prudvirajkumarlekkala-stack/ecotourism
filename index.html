@@ -60,7 +60,7 @@
     /* ── HERO ── */
     .hero {
       min-height: 100vh;
-      background: linear-gradient(rgba(15,40,15,.52), rgba(15,40,15,.52)),
+      background: linear-gradient(135deg, rgba(15, 157, 168, 0.75), rgba(26, 188, 156, 0.75)),
         url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=800&q=80&fm=webp');
       background-size: cover;
       background-position: center;
@@ -69,9 +69,9 @@
     }
     .hero-inner { animation: fadeUp .9s ease both; }
     .hero-tag {
-      display:inline-block; background: rgba(90,158,96,0.35);
-      border: 1px solid rgba(90,158,96,0.6);
-      color:#a8e6a0; font-family:Arial,sans-serif; font-size:.75rem;
+      display:inline-block; background: rgba(26, 188, 156, 0.4);
+      border: 1px solid rgba(75, 235, 205, 0.8);
+      color:#d4f8f4; font-family:Arial,sans-serif; font-size:.75rem;
       letter-spacing:.18em; text-transform:uppercase;
       padding:.35rem .9rem; border-radius:2rem; margin-bottom:1.2rem;
     }
@@ -80,10 +80,10 @@
       line-height:1.15; margin-bottom:1rem;
       text-shadow: 0 2px 12px rgba(0,0,0,.4);
     }
-    .hero h1 em { color:#a8e6a0; font-style:italic; }
+    .hero h1 em { color:#4bebcd; font-style:italic; }
     .hero p {
       font-size:1.05rem; max-width:520px; margin:0 auto 2.2rem;
-      line-height:1.75; opacity:.88; font-family:Arial,sans-serif;
+      line-height:1.75; opacity:.92; font-family:Arial,sans-serif;
     }
     .hero-btns { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
     .btn {
@@ -93,10 +93,10 @@
       transition: transform .2s, background .2s, box-shadow .2s;
     }
     .btn:hover { transform: translateY(-2px); box-shadow:0 6px 18px rgba(0,0,0,.25); }
-    .btn-green { background:#5a9e60; color:#fff; }
-    .btn-green:hover { background:#3d7a43; }
-    .btn-outline { background:transparent; color:#fff; border:1.5px solid rgba(255,255,255,.55); }
-    .btn-outline:hover { border-color:#a8e6a0; color:#a8e6a0; }
+    .btn-green { background:#1abc9c; color:#fff; }
+    .btn-green:hover { background:#16a085; }
+    .btn-outline { background:transparent; color:#fff; border:1.5px solid rgba(255,255,255,.7); }
+    .btn-outline:hover { border-color:#4bebcd; color:#4bebcd; background:rgba(75, 235, 205, 0.1); }
 
     /* ── SECTION BASE ── */
     .section-wrap { max-width:1050px; margin:0 auto; padding:4rem 2rem; }
@@ -283,7 +283,7 @@
 
       <div class="card">
         <div class="card-img-wrap">
-          <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=700&h=400&q=80&fm=webp" alt="Amazon Rainforest" loading="lazy"/>
+          <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=700&h=400&q=80&fm=webp" alt="Amazon Rainforest" loading="lazy" type="image/webp"/>
         </div>
         <div class="card-body">
           <span class="card-label">Wildlife</span>
@@ -298,7 +298,7 @@
 
       <div class="card">
         <div class="card-img-wrap">
-          <img src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=700&h=400&q=80&fm=webp" alt="Coral Reef" loading="lazy"/>
+          <img src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=700&h=400&q=80&fm=webp" alt="Coral Reef" loading="lazy" type="image/webp"/>
         </div>
         <div class="card-body">
           <span class="card-label">Marine</span>
@@ -313,7 +313,7 @@
 
       <div class="card">
         <div class="card-img-wrap">
-          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=400&q=80&fm=webp" alt="Western Ghats" loading="lazy"/>
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=400&q=80&fm=webp" alt="Western Ghats" loading="lazy" type="image/webp"/>
         </div>
         <div class="card-body">
           <span class="card-label">Trek</span>
@@ -328,7 +328,7 @@
 
       <div class="card">
         <div class="card-img-wrap">
-          <img src="https://images.unsplash.com/photo-1500595046891-9e3da4f8ab17?w=700&h=400&q=80&fm=webp" alt="Costa Rica Cloud Forest" loading="lazy"/>
+          <img src="https://images.unsplash.com/photo-1500595046891-9e3da4f8ab17?w=700&h=400&q=80&fm=webp" alt="Costa Rica Cloud Forest" loading="lazy" type="image/webp"/>
         </div>
         <div class="card-body">
           <span class="card-label">Canopy Adventure</span>
@@ -343,7 +343,7 @@
 
       <div class="card">
         <div class="card-img-wrap">
-          <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=700&h=400&q=80&fm=webp" alt="Galápagos Islands" loading="lazy"/>
+          <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=700&h=400&q=80&fm=webp" alt="Galápagos Islands" loading="lazy" type="image/webp"/>
         </div>
         <div class="card-body">
           <span class="card-label">Wildlife</span>
@@ -365,7 +365,7 @@
   <div class="section-wrap">
     <div class="about-grid">
       <div class="reveal">
-        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=700&h=500&q=80&fm=webp" alt="About Stackly" class="about-img" loading="lazy"/>
+        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=700&h=500&q=80&fm=webp" alt="About Stackly" class="about-img" loading="lazy" type="image/webp"/>
       </div>
       <div>
         <span class="section-tag">About Us</span>
