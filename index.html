@@ -7,7 +7,7 @@
   <style>
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: Georgia, serif; color: #2c3e2d; background: #f9f6f0; overflow-x:hidden; }
+    body { font-family: Georgia, serif; color: #000; background: #f9f6f0; overflow-x:hidden; }
 
     /* ── NAV ── */
     nav {
@@ -105,9 +105,9 @@
       letter-spacing:.2em; text-transform:uppercase; color:#5a9e60;
       margin-bottom:.5rem; display:block;
     }
-    h2 { font-size:clamp(1.7rem,3.5vw,2.4rem); color:#2c4a30; margin-bottom:.4rem; line-height:1.2; }
+    h2 { font-size:clamp(1.7rem,3.5vw,2.4rem); color:#000; margin-bottom:.4rem; line-height:1.2; }
     .section-sub {
-      font-family:Arial,sans-serif; font-size:.9rem; color:#6a8c6a;
+      font-family:Arial,sans-serif; font-size:.9rem; color:#333;
       margin-bottom:2.2rem; line-height:1.6;
     }
 
@@ -132,14 +132,14 @@
       margin-bottom:.45rem;
     }
     .card-body { padding:1.2rem; }
-    .card-body h3 { font-size:1.1rem; color:#2c4a30; margin-bottom:.4rem; }
-    .card-body p { font-family:Arial,sans-serif; font-size:.84rem; color:#557060; line-height:1.65; }
+    .card-body h3 { font-size:1.1rem; color:#000; margin-bottom:.4rem; }
+    .card-body p { font-family:Arial,sans-serif; font-size:.84rem; color:#333; line-height:1.65; }
     .card-footer {
       display:flex; justify-content:space-between; align-items:center;
       padding:.85rem 1.2rem; border-top:1px solid #e8f0e6;
-      font-family:Arial,sans-serif; font-size:.8rem; color:#7a9c7a;
+      font-family:Arial,sans-serif; font-size:.8rem; color:#666;
     }
-    .card-price { color:#2c4a30; font-weight:700; font-size:.95rem; }
+    .card-price { color:#000; font-weight:700; font-size:.95rem; }
 
     /* ── ABOUT ── */
     #about { background:#eef5ec; }
@@ -148,7 +148,7 @@
     }
     .about-img { width:100%; border-radius:8px; aspect-ratio:4/3; object-fit:cover; display:block; }
     .about-text h2 { margin-bottom:.8rem; }
-    .about-text p { font-family:Arial,sans-serif; font-size:.92rem; color:#3a5e3a; line-height:1.8; margin-bottom:1rem; }
+    .about-text p { font-family:Arial,sans-serif; font-size:.92rem; color:#000; line-height:1.8; margin-bottom:1rem; }
     .pillars { display:flex; flex-direction:column; gap:.85rem; margin-top:1.4rem; }
     .pillar {
       display:flex; gap:.9rem; align-items:flex-start;
@@ -159,14 +159,14 @@
     }
     .pillar.visible { opacity:1; transform:translateX(0); }
     .pillar-icon { font-size:1.35rem; margin-top:.05rem; flex-shrink:0; }
-    .pillar h4 { font-size:.9rem; color:#2c4a30; margin-bottom:.2rem; }
-    .pillar p { font-family:Arial,sans-serif; font-size:.8rem; color:#7a9c7a; line-height:1.5; }
+    .pillar h4 { font-size:.9rem; color:#000; margin-bottom:.2rem; }
+    .pillar p { font-family:Arial,sans-serif; font-size:.8rem; color:#333; line-height:1.5; }
 
     /* ── CONTACT ── */
     #contact { background:#2c4a30; }
     #contact .section-tag { color:#7ab87a; }
-    #contact h2 { color:#a8d5a2; }
-    #contact .section-sub { color:#7ab87a; }
+    #contact h2 { color:#fff; }
+    #contact .section-sub { color:#fff; }
     form { display:grid; gap:.85rem; max-width:520px; margin-top:1.6rem; }
     .form-row { display:grid; grid-template-columns:1fr 1fr; gap:.85rem; }
     input, select, textarea {
@@ -191,7 +191,7 @@
 
     /* ── FOOTER ── */
     footer {
-      background:#1a2e1b; color:#6a8c6a;
+      background:#1a2e1b; color:#fff;
       text-align:center; padding:1.6rem 2rem;
       font-family:Arial,sans-serif; font-size:.82rem;
     }
